@@ -1,0 +1,14 @@
+{% macro bootstrapPreview(link,h2Title,description) %}
+  <p class="remove-borders">
+    <a class="btn btn-primary" data-toggle="collapse" href="#{{link}}">
+      {{h2Title}}
+    </a>
+  </p>
+
+  <div class="collapse remove-borders " id="{{link}}">
+    <div class="card card-block remove-borders" >
+        {{description}}
+    </div>
+  </div>
+{% endmacro %}
+

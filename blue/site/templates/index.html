@@ -1,10 +1,26 @@
 <!DOCTYPE html>
-{% from "head.html" import head %}
+{% from "head.html" import site %}
+{% from "head.html" import bootstrapLinks %}
+{% from "panels.html" import bootstrapPreview %}
+
 
 <html lang="en">
-{{ head('Site Title') }}
-
+<head>
+    <meta charset="UTF-8">
+    {{ site('Site Title') }}
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site/css/mainpage.css') }}">
+</head>
 <body>
+        <div class="remove-borders">
+			{{ bootstrapPreview("collapseExample1","Project 1", "Hello this is project 1") }}
+            {{ bootstrapPreview("collapseExample2","Project 2", "Hello this is project 2") }}
+            {{ bootstrapPreview("collapseExample3","Project 3", "Hello this is project 3") }}
+        </div>
 
+
+<script src="{{ url_for('static', filename='site/js/main.js') }}"></script>
+<script src="{{ url_for('static', filename='site/js/jquery-2.1.1.js') }}"></script>
+<script src="{{ url_for('static', filename='site/js/modernizr.js') }}"></script>
+{{bootstrapLinks("These are bootstrap cdns")}}
 </body>
 </html>
