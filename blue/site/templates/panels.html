@@ -1,14 +1,17 @@
 {% macro bootstrapPreview(link,h2Title,description) %}
-  <p class="remove-borders">
-    <a class="btn btn-primary" data-toggle="collapse" href="#{{link}}">
+  <div class="container-fluid remove-borders" style="height: 25%;" >
+    <div class="container-fluid btn-primary" style="height: 100%;" data-toggle="collapse" href="#{{link}}">
       {{h2Title}}
-    </a>
-  </p>
+    </div>
+  </div>
 
-  <div class="collapse remove-borders " id="{{link}}">
-    <div class="card card-block remove-borders" >
+  <div class="container-fluid collapse remove-borders " id="{{link}}">
+    <div class="container-fluid card card-block remove-borders" >
         {{description}}
     </div>
   </div>
 {% endmacro %}
 
+{% macro bootstrapCard(link,htitle, content) %}
+<img src={{link|safe}} class="img-fluid" alt="Responsive image">
+{% endmacro %} 
