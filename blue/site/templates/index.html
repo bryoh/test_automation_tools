@@ -1,28 +1,26 @@
 <!DOCTYPE html>
+<html lang="en">
 {% from "head.html" import site %}
 {% from "head.html" import bootstrapLinks %}
 {% from "panels.html" import bootstrapPreview %}
 {% from "panels.html" import bootstrapCard %}
-
-
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     {{ site('Site Title') }}
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site/css/mainpage.css') }}">
 </head>
 <body>
-        <div class="container-fluid remove-borders">
-			{{ bootstrapPreview("collapseExample1","Project 1", "Hello this is project 1") }}
-            {{ bootstrapPreview("collapseExample2","Project 2", "Hello this is project 2") }}
-            {{ bootstrapPreview("collapseExample3","Project 3", "Hello this is project 3") }}
-            {{ bootstrapCard('site/img/img-1.jpg', "Project 4", "Hello this is project 4") }}
-        </div>
+            <div class="panel-group maxeverything" id="accordion">
+                    {{ bootstrapPreview("collapseExample1","Project1", "Hello this is project 1","accordion","-0%",url_for('static', filename='site/img/img-1.jpg') ) }}
+                    {{ bootstrapPreview("collapseExample1","Project2", "Hello this is project 1","accordion","-2%", url_for('static', filename='site/img/img-2.jpg') ) }}
+                    {{ bootstrapPreview("collapseExample1","Project3", "Hello this is project 1","accordion", "-2%", url_for('static', filename='site/img/img-3.jpg') ) }}
+                    {{ bootstrapPreview("collapseExample1","Project4", "Hello this is project 1","accordion", "-2%", url_for('static', filename='site/img/img-4.jpg') ) }}
+            </div>
 
 
-<script src="{{ url_for('static', filename='site/js/main.js') }}"></script>
-<script src="{{ url_for('static', filename='site/js/jquery-2.1.1.js') }}"></script>
-<script src="{{ url_for('static', filename='site/js/modernizr.js') }}"></script>
-{{bootstrapLinks("These are bootstrap cdns")}}
+    <script src="{{ url_for('static', filename='site/js/main.js') }}"></script>
+    <script src="{{ url_for('static', filename='site/js/jquery-2.1.1.js') }}"></script>
+    <script src="{{ url_for('static', filename='site/js/modernizr.js') }}"></script>
+    {{bootstrapLinks("These are bootstrap cdns")}}
 </body>
 </html>
