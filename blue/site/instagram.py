@@ -1,7 +1,8 @@
 import requests
 from datetime import datetime
 from pprint import pprint as pp
-
+from collections import Counter
+import itertools
 
 time_fmt = "%c"  # because time is very important define it here.
 # client secret,  id and token seriously need a home
@@ -79,6 +80,7 @@ class Profile(User):
         self.media_total = self.counts['media']
         self.media_recent_data = request_handler(self.recent_media_url, 'data')
         self.media_recent_obj_list = [Media(media_data=obj) for obj in self.media_recent_data]
+        self.common_tags = list(itertools.chain(*[Media(media_data=obj).tags for obj in self.media_recent_data]))
 
 
 class Media(User):
@@ -112,8 +114,11 @@ class Media(User):
 
 def main():
     s = Profile("bryoh_15")
-    created_times = [obj.created_time for obj in s.media_recent_obj_list]
-    pp(created_times)
+    #g = Profile("champagnepapi")
+    #gs = g.followers
+    growth = [(obj.created_time, obj.likes ) for obj in s.media_recent_obj_list ]
+
+    pp(Counter(s.common_tags))
 
 if __name__ == "__main__":
     main()
