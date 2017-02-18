@@ -54,18 +54,16 @@ class User:
 
             self.user_info_url = "https://api.instagram.com/v1/users/{}/?access_token={}".format(self.user_id, access_token)
             self.recent_media_url = "https://api.instagram.com/v1/users/{}/media/recent/?access_token={}".format(self.user_id, access_token)
-
+            self.followed_by_url = "https://api.instagram.com/v1/users/{}/followed-by/?access_token={}".format(self.user_id, access_token)
             self.user_info_data = request_handler(self.user_info_url, 'data')
 
 
 class Profile(User):
     """
     gets profile infomation such as total following and followers
-    bryoh = Profile("bryoh_15")
-    print(bryoh.user_search_data)
-    print(bryoh.recent_media_data)
-    print(bryoh.followers)
-    print(bryoh.following)
+    profile_item= Profile("bryoh_15")
+    print(profile_item.followers)
+    print(profile_item.following)
     """
     def __init__(self, username):
         User.__init__(self, username)
@@ -81,7 +79,30 @@ class Profile(User):
         self.media_recent_data = request_handler(self.recent_media_url, 'data')
         self.media_recent_obj_list = [Media(media_data=obj) for obj in self.media_recent_data]
         self.common_tags = list(itertools.chain(*[Media(media_data=obj).tags for obj in self.media_recent_data]))
+        self.tags_n_likes = [(tag, media.likes)for tag in self.common_tags for media in self.media_recent_obj_list if tag in media.tags ]
 
+    def tags_vs_likes(self):
+        """returns a dic of {hashtag: total_likes} """
+        ret = {}
+        for tag, likes in self.tags_n_likes:
+            if tag not in ret.keys():
+                ret[tag] = likes
+            else:
+                ret[tag] = ret[tag] + likes
+        return ret
+
+    def tag_average_like(self):
+        """ return a dict of all average accumilation of a hash tag """
+        ret = {}
+        tags =self.common_tags
+        lookup = self.tags_vs_likes()
+        for item in tags:
+            tag = str(item)
+            average = lookup[tag] / Counter(tags)[tag]
+            print tag
+            print average
+            ret[tag] = int(average)
+        return ret
 
 class Media(User):
     """
@@ -114,11 +135,8 @@ class Media(User):
 
 def main():
     s = Profile("bryoh_15")
-    #g = Profile("champagnepapi")
-    #gs = g.followers
-    growth = [(obj.created_time, obj.likes ) for obj in s.media_recent_obj_list ]
+    pp(s.tag_average_like())
 
-    pp(Counter(s.common_tags))
 
 if __name__ == "__main__":
     main()
