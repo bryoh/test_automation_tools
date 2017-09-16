@@ -1,0 +1,139 @@
+\hypertarget{namespacedygraph}{}\section{dygraph Namespace Reference}
+\label{namespacedygraph}\index{dygraph@{dygraph}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacedygraph_a38c909f265127c0dddf064736732fd2e}{head} ()
+\item 
+def \hyperlink{namespacedygraph_aa1c1ef22e533672d93bf86b233a5654f}{body} (divs, scripts)
+\item 
+def \hyperlink{namespacedygraph_a709fc2a220af310c7d345774b1bcd867}{create\+\_\+div} (element\+\_\+id)
+\item 
+def \hyperlink{namespacedygraph_a335c78514adf717b318ea79cf51f2a77}{format\+\_\+javascript} (csv, element\+\_\+id)
+\item 
+def \hyperlink{namespacedygraph_ac1ba86fde42a8f787d8bca68ce8100f2}{create\+\_\+graph} (csv, value)
+\item 
+def \hyperlink{namespacedygraph_aa653f1d1753e6108461061f8e1b90d40}{is\+\_\+str} (val)
+\item 
+def \hyperlink{namespacedygraph_a2c174130d53d0774861cdd8270c59fec}{create\+\_\+graphs} (csv\+\_\+s)
+\item 
+def \hyperlink{namespacedygraph_a57fa7c9ff52b13cd6bfea53bcaf8762a}{construct\+\_\+page} (csv\+\_\+s, output\+\_\+file\+\_\+name)
+\item 
+def \hyperlink{namespacedygraph_a02c45467b80e5d1de197a2c99ad33ef9}{is\+\_\+valid\+\_\+file} (parser, arg)
+\item 
+def \hyperlink{namespacedygraph_a80a524f2253d01dd79ca6ab3c5dcae23}{get\+\_\+parser} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries args} = \hyperlink{namespacedygraph_a80a524f2253d01dd79ca6ab3c5dcae23}{get\+\_\+parser}().parse\+\_\+args()\hypertarget{namespacedygraph_a12c05b493e6a77d18ee93bda0419a800}{}\label{namespacedygraph_a12c05b493e6a77d18ee93bda0419a800}
+
+\item 
+list {\bfseries paths} = \mbox{[}$\,$\mbox{]}\hypertarget{namespacedygraph_ab34bdf0f10a9c0ed2535234a85743fdc}{}\label{namespacedygraph_ab34bdf0f10a9c0ed2535234a85743fdc}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Given a list of csv files, plots each csv file on a web page
+you need to have dygraph libraries in a folder nameed dygraph
+
+dygraph-----|
+            |_______dygraph.css
+            |_______dygraph.min.js
+dygrap_data |
+            |_______file1.csv
+            |_______file2.csv
+\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\index{dygraph@{dygraph}!body@{body}}
+\index{body@{body}!dygraph@{dygraph}}
+\subsubsection[{\texorpdfstring{body(divs, scripts)}{body(divs, scripts)}}]{\setlength{\rightskip}{0pt plus 5cm}def dygraph.\+body (
+\begin{DoxyParamCaption}
+\item[{}]{divs, }
+\item[{}]{scripts}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacedygraph_aa1c1ef22e533672d93bf86b233a5654f}{}\label{namespacedygraph_aa1c1ef22e533672d93bf86b233a5654f}
+\begin{DoxyVerb}Construct the body scection of page
+Note: scripts need to the bottom of the page in order to speed up rendering\end{DoxyVerb}
+ \index{dygraph@{dygraph}!construct\+\_\+page@{construct\+\_\+page}}
+\index{construct\+\_\+page@{construct\+\_\+page}!dygraph@{dygraph}}
+\subsubsection[{\texorpdfstring{construct\+\_\+page(csv\+\_\+s, output\+\_\+file\+\_\+name)}{construct_page(csv_s, output_file_name)}}]{\setlength{\rightskip}{0pt plus 5cm}def dygraph.\+construct\+\_\+page (
+\begin{DoxyParamCaption}
+\item[{}]{csv\+\_\+s, }
+\item[{}]{output\+\_\+file\+\_\+name}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacedygraph_a57fa7c9ff52b13cd6bfea53bcaf8762a}{}\label{namespacedygraph_a57fa7c9ff52b13cd6bfea53bcaf8762a}
+\begin{DoxyVerb}# give a csv(or list of csvs) and output filename
+# this will create a html file in the current working directory
+\end{DoxyVerb}
+ \index{dygraph@{dygraph}!create\+\_\+div@{create\+\_\+div}}
+\index{create\+\_\+div@{create\+\_\+div}!dygraph@{dygraph}}
+\subsubsection[{\texorpdfstring{create\+\_\+div(element\+\_\+id)}{create_div(element_id)}}]{\setlength{\rightskip}{0pt plus 5cm}def dygraph.\+create\+\_\+div (
+\begin{DoxyParamCaption}
+\item[{}]{element\+\_\+id}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacedygraph_a709fc2a220af310c7d345774b1bcd867}{}\label{namespacedygraph_a709fc2a220af310c7d345774b1bcd867}
+\begin{DoxyVerb}Given an element id create div \end{DoxyVerb}
+ \index{dygraph@{dygraph}!create\+\_\+graph@{create\+\_\+graph}}
+\index{create\+\_\+graph@{create\+\_\+graph}!dygraph@{dygraph}}
+\subsubsection[{\texorpdfstring{create\+\_\+graph(csv, value)}{create_graph(csv, value)}}]{\setlength{\rightskip}{0pt plus 5cm}def dygraph.\+create\+\_\+graph (
+\begin{DoxyParamCaption}
+\item[{}]{csv, }
+\item[{}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacedygraph_ac1ba86fde42a8f787d8bca68ce8100f2}{}\label{namespacedygraph_ac1ba86fde42a8f787d8bca68ce8100f2}
+\begin{DoxyVerb}Given a csv return two items a div and the javascript part \end{DoxyVerb}
+ \index{dygraph@{dygraph}!create\+\_\+graphs@{create\+\_\+graphs}}
+\index{create\+\_\+graphs@{create\+\_\+graphs}!dygraph@{dygraph}}
+\subsubsection[{\texorpdfstring{create\+\_\+graphs(csv\+\_\+s)}{create_graphs(csv_s)}}]{\setlength{\rightskip}{0pt plus 5cm}def dygraph.\+create\+\_\+graphs (
+\begin{DoxyParamCaption}
+\item[{}]{csv\+\_\+s}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacedygraph_a2c174130d53d0774861cdd8270c59fec}{}\label{namespacedygraph_a2c174130d53d0774861cdd8270c59fec}
+\begin{DoxyVerb}Given a list of csvs create a list of tuples [(div),(javascript)] \end{DoxyVerb}
+ \index{dygraph@{dygraph}!format\+\_\+javascript@{format\+\_\+javascript}}
+\index{format\+\_\+javascript@{format\+\_\+javascript}!dygraph@{dygraph}}
+\subsubsection[{\texorpdfstring{format\+\_\+javascript(csv, element\+\_\+id)}{format_javascript(csv, element_id)}}]{\setlength{\rightskip}{0pt plus 5cm}def dygraph.\+format\+\_\+javascript (
+\begin{DoxyParamCaption}
+\item[{}]{csv, }
+\item[{}]{element\+\_\+id}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacedygraph_a335c78514adf717b318ea79cf51f2a77}{}\label{namespacedygraph_a335c78514adf717b318ea79cf51f2a77}
+\begin{DoxyVerb}Given a csv and an element id create javascript\end{DoxyVerb}
+ \index{dygraph@{dygraph}!get\+\_\+parser@{get\+\_\+parser}}
+\index{get\+\_\+parser@{get\+\_\+parser}!dygraph@{dygraph}}
+\subsubsection[{\texorpdfstring{get\+\_\+parser()}{get_parser()}}]{\setlength{\rightskip}{0pt plus 5cm}def dygraph.\+get\+\_\+parser (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacedygraph_a80a524f2253d01dd79ca6ab3c5dcae23}{}\label{namespacedygraph_a80a524f2253d01dd79ca6ab3c5dcae23}
+\begin{DoxyVerb}Get parser object for script \end{DoxyVerb}
+ \index{dygraph@{dygraph}!head@{head}}
+\index{head@{head}!dygraph@{dygraph}}
+\subsubsection[{\texorpdfstring{head()}{head()}}]{\setlength{\rightskip}{0pt plus 5cm}def dygraph.\+head (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacedygraph_a38c909f265127c0dddf064736732fd2e}{}\label{namespacedygraph_a38c909f265127c0dddf064736732fd2e}
+\begin{DoxyVerb}Construct the header section of the page\end{DoxyVerb}
+ \index{dygraph@{dygraph}!is\+\_\+str@{is\+\_\+str}}
+\index{is\+\_\+str@{is\+\_\+str}!dygraph@{dygraph}}
+\subsubsection[{\texorpdfstring{is\+\_\+str(val)}{is_str(val)}}]{\setlength{\rightskip}{0pt plus 5cm}def dygraph.\+is\+\_\+str (
+\begin{DoxyParamCaption}
+\item[{}]{val}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacedygraph_aa653f1d1753e6108461061f8e1b90d40}{}\label{namespacedygraph_aa653f1d1753e6108461061f8e1b90d40}
+\begin{DoxyVerb}replacement of isinstance\end{DoxyVerb}
+ \index{dygraph@{dygraph}!is\+\_\+valid\+\_\+file@{is\+\_\+valid\+\_\+file}}
+\index{is\+\_\+valid\+\_\+file@{is\+\_\+valid\+\_\+file}!dygraph@{dygraph}}
+\subsubsection[{\texorpdfstring{is\+\_\+valid\+\_\+file(parser, arg)}{is_valid_file(parser, arg)}}]{\setlength{\rightskip}{0pt plus 5cm}def dygraph.\+is\+\_\+valid\+\_\+file (
+\begin{DoxyParamCaption}
+\item[{}]{parser, }
+\item[{}]{arg}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacedygraph_a02c45467b80e5d1de197a2c99ad33ef9}{}\label{namespacedygraph_a02c45467b80e5d1de197a2c99ad33ef9}
+\begin{DoxyVerb}Check if arg is a valid file that already exists on the file system. \end{DoxyVerb}
+ 

@@ -1,0 +1,140 @@
+\hypertarget{namespacerun}{}\section{run Namespace Reference}
+\label{namespacerun}\index{run@{run}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacerun_a3b08d60d4cd53151ec8838a221d7633a}{head} ()
+\item 
+def \hyperlink{namespacerun_a74bf2289c79392f74f7e88f2b381c20b}{body} (divs, scripts)
+\item 
+def \hyperlink{namespacerun_a4d228a662f6694eccdf9dc2d3f8f8480}{create\+\_\+div} (element\+\_\+id)
+\item 
+def \hyperlink{namespacerun_aa81671265a932a7f4c19bd73d09bc82d}{format\+\_\+javascript} (csv, element\+\_\+id)
+\item 
+def \hyperlink{namespacerun_acb5629f312402624c95b661fcff63a1f}{create\+\_\+graph} (csv, value)
+\item 
+def \hyperlink{namespacerun_a9b88a64554a7a02253851f2600a120cd}{is\+\_\+str} (val)
+\item 
+def \hyperlink{namespacerun_aebb94f64622b7c51906e78dac4dd8000}{create\+\_\+graphs} (csv\+\_\+s)
+\item 
+def \hyperlink{namespacerun_a8dc739a3ea482ed259b95d09e93d0c50}{construct\+\_\+page} (csv\+\_\+s, output\+\_\+file\+\_\+name)
+\item 
+def \hyperlink{namespacerun_aae2313534d495ae2febd2a904c81492b}{is\+\_\+valid\+\_\+file} (parser, arg)
+\item 
+def \hyperlink{namespacerun_a348b64b33bf6392bcfe25dcda942ea43}{get\+\_\+parser} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries args} = \hyperlink{namespacerun_a348b64b33bf6392bcfe25dcda942ea43}{get\+\_\+parser}().parse\+\_\+args()\hypertarget{namespacerun_ae17d16e2bd9faf979c9dd957577f67a2}{}\label{namespacerun_ae17d16e2bd9faf979c9dd957577f67a2}
+
+\item 
+list {\bfseries paths} = \mbox{[}$\,$\mbox{]}\hypertarget{namespacerun_a22c3753cd72bc0f848f36e6c0ea06006}{}\label{namespacerun_a22c3753cd72bc0f848f36e6c0ea06006}
+
+\item 
+{\bfseries url} = simpleserver.\+create\+\_\+and\+\_\+serve()\hypertarget{namespacerun_ab6ad1219613fd1234b324230ff9b3f0d}{}\label{namespacerun_ab6ad1219613fd1234b324230ff9b3f0d}
+
+\item 
+{\bfseries port} = url.\+split(\textquotesingle{}\+:\textquotesingle{})\mbox{[}1\mbox{]}\hypertarget{namespacerun_a7a6a5c33b9e900b36c2b941d5212210e}{}\label{namespacerun_a7a6a5c33b9e900b36c2b941d5212210e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxyVerb}Given a list of csv files, plots each csv file on a web page
+you need to have dygraph libraries in a folder nameed dygraph
+After executing run the following and view the graphs in your browser
+
+python2 -m SimpleHTTPServer\end{DoxyVerb}
+ 
+
+\subsection{Function Documentation}
+\index{run@{run}!body@{body}}
+\index{body@{body}!run@{run}}
+\subsubsection[{\texorpdfstring{body(divs, scripts)}{body(divs, scripts)}}]{\setlength{\rightskip}{0pt plus 5cm}def run.\+body (
+\begin{DoxyParamCaption}
+\item[{}]{divs, }
+\item[{}]{scripts}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacerun_a74bf2289c79392f74f7e88f2b381c20b}{}\label{namespacerun_a74bf2289c79392f74f7e88f2b381c20b}
+\begin{DoxyVerb}Construct the body scection of page
+Note: scripts need to the bottom of the page in order to speed up rendering\end{DoxyVerb}
+ \index{run@{run}!construct\+\_\+page@{construct\+\_\+page}}
+\index{construct\+\_\+page@{construct\+\_\+page}!run@{run}}
+\subsubsection[{\texorpdfstring{construct\+\_\+page(csv\+\_\+s, output\+\_\+file\+\_\+name)}{construct_page(csv_s, output_file_name)}}]{\setlength{\rightskip}{0pt plus 5cm}def run.\+construct\+\_\+page (
+\begin{DoxyParamCaption}
+\item[{}]{csv\+\_\+s, }
+\item[{}]{output\+\_\+file\+\_\+name}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacerun_a8dc739a3ea482ed259b95d09e93d0c50}{}\label{namespacerun_a8dc739a3ea482ed259b95d09e93d0c50}
+\begin{DoxyVerb}# give a csv(or list of csvs) and output filename
+# this will create a html file in the current working directory
+\end{DoxyVerb}
+ \index{run@{run}!create\+\_\+div@{create\+\_\+div}}
+\index{create\+\_\+div@{create\+\_\+div}!run@{run}}
+\subsubsection[{\texorpdfstring{create\+\_\+div(element\+\_\+id)}{create_div(element_id)}}]{\setlength{\rightskip}{0pt plus 5cm}def run.\+create\+\_\+div (
+\begin{DoxyParamCaption}
+\item[{}]{element\+\_\+id}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacerun_a4d228a662f6694eccdf9dc2d3f8f8480}{}\label{namespacerun_a4d228a662f6694eccdf9dc2d3f8f8480}
+\begin{DoxyVerb}Given an element id create div \end{DoxyVerb}
+ \index{run@{run}!create\+\_\+graph@{create\+\_\+graph}}
+\index{create\+\_\+graph@{create\+\_\+graph}!run@{run}}
+\subsubsection[{\texorpdfstring{create\+\_\+graph(csv, value)}{create_graph(csv, value)}}]{\setlength{\rightskip}{0pt plus 5cm}def run.\+create\+\_\+graph (
+\begin{DoxyParamCaption}
+\item[{}]{csv, }
+\item[{}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacerun_acb5629f312402624c95b661fcff63a1f}{}\label{namespacerun_acb5629f312402624c95b661fcff63a1f}
+\begin{DoxyVerb}Given a csv return two items a div and the javascript part \end{DoxyVerb}
+ \index{run@{run}!create\+\_\+graphs@{create\+\_\+graphs}}
+\index{create\+\_\+graphs@{create\+\_\+graphs}!run@{run}}
+\subsubsection[{\texorpdfstring{create\+\_\+graphs(csv\+\_\+s)}{create_graphs(csv_s)}}]{\setlength{\rightskip}{0pt plus 5cm}def run.\+create\+\_\+graphs (
+\begin{DoxyParamCaption}
+\item[{}]{csv\+\_\+s}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacerun_aebb94f64622b7c51906e78dac4dd8000}{}\label{namespacerun_aebb94f64622b7c51906e78dac4dd8000}
+\begin{DoxyVerb}Given a list of csvs create a list of tuples [(div),(javascript)] \end{DoxyVerb}
+ \index{run@{run}!format\+\_\+javascript@{format\+\_\+javascript}}
+\index{format\+\_\+javascript@{format\+\_\+javascript}!run@{run}}
+\subsubsection[{\texorpdfstring{format\+\_\+javascript(csv, element\+\_\+id)}{format_javascript(csv, element_id)}}]{\setlength{\rightskip}{0pt plus 5cm}def run.\+format\+\_\+javascript (
+\begin{DoxyParamCaption}
+\item[{}]{csv, }
+\item[{}]{element\+\_\+id}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacerun_aa81671265a932a7f4c19bd73d09bc82d}{}\label{namespacerun_aa81671265a932a7f4c19bd73d09bc82d}
+\begin{DoxyVerb}Given a csv and an element id create javascript\end{DoxyVerb}
+ \index{run@{run}!get\+\_\+parser@{get\+\_\+parser}}
+\index{get\+\_\+parser@{get\+\_\+parser}!run@{run}}
+\subsubsection[{\texorpdfstring{get\+\_\+parser()}{get_parser()}}]{\setlength{\rightskip}{0pt plus 5cm}def run.\+get\+\_\+parser (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacerun_a348b64b33bf6392bcfe25dcda942ea43}{}\label{namespacerun_a348b64b33bf6392bcfe25dcda942ea43}
+\begin{DoxyVerb}Get parser object for script \end{DoxyVerb}
+ \index{run@{run}!head@{head}}
+\index{head@{head}!run@{run}}
+\subsubsection[{\texorpdfstring{head()}{head()}}]{\setlength{\rightskip}{0pt plus 5cm}def run.\+head (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacerun_a3b08d60d4cd53151ec8838a221d7633a}{}\label{namespacerun_a3b08d60d4cd53151ec8838a221d7633a}
+\begin{DoxyVerb}Construct the header section of the page\end{DoxyVerb}
+ \index{run@{run}!is\+\_\+str@{is\+\_\+str}}
+\index{is\+\_\+str@{is\+\_\+str}!run@{run}}
+\subsubsection[{\texorpdfstring{is\+\_\+str(val)}{is_str(val)}}]{\setlength{\rightskip}{0pt plus 5cm}def run.\+is\+\_\+str (
+\begin{DoxyParamCaption}
+\item[{}]{val}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacerun_a9b88a64554a7a02253851f2600a120cd}{}\label{namespacerun_a9b88a64554a7a02253851f2600a120cd}
+\begin{DoxyVerb}replacement of isinstance\end{DoxyVerb}
+ \index{run@{run}!is\+\_\+valid\+\_\+file@{is\+\_\+valid\+\_\+file}}
+\index{is\+\_\+valid\+\_\+file@{is\+\_\+valid\+\_\+file}!run@{run}}
+\subsubsection[{\texorpdfstring{is\+\_\+valid\+\_\+file(parser, arg)}{is_valid_file(parser, arg)}}]{\setlength{\rightskip}{0pt plus 5cm}def run.\+is\+\_\+valid\+\_\+file (
+\begin{DoxyParamCaption}
+\item[{}]{parser, }
+\item[{}]{arg}
+\end{DoxyParamCaption}
+)}\hypertarget{namespacerun_aae2313534d495ae2febd2a904c81492b}{}\label{namespacerun_aae2313534d495ae2febd2a904c81492b}
+\begin{DoxyVerb}Check if arg is a valid file that already exists on the file system. \end{DoxyVerb}
+ 
