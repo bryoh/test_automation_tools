@@ -8,7 +8,9 @@ python2 -m SimpleHTTPServer
 '''
 
 import os
+import webbrowser
 from pprint import pprint as pp
+import simpleserver
 
 def head():
     """Construct the header section of the page"""
@@ -111,3 +113,7 @@ if __name__ == '__main__':
         if str(file).endswith('csv'):
             paths.append(file)
     construct_page(paths, 'index.html')
+    url = simpleserver.create_and_serve()
+    port = url.split(':')[1]
+    webbrowser.open_new_tab(url)  # 2 to open in a new tab if possible
+    
