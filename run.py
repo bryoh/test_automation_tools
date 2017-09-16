@@ -11,8 +11,10 @@ dygrap_data |
 '''
 
 import os
+from pprint import pprint as pp
 
 def head():
+    """Construct the header section of the page"""
     return """
     <head>
     <script type='text/javascript'src="dygraph/dygraph.min.js"></script><link rel='stylesheet' src='dygraph/dygraph.css'/>
@@ -21,7 +23,8 @@ def head():
 
 
 def body(divs, scripts):
-    # scripts need to the bottom of the page in order to speed up rendering
+    """ Construct the body scection of page
+    Note: scripts need to the bottom of the page in order to speed up rendering"""""
     return """
     <body>{} 
     <script>
@@ -31,31 +34,38 @@ def body(divs, scripts):
 
 
 def create_div(element_id):
-    # given an element id create div
+    """ Given an element id create div """
     return '''
     <h2>{0}</h2>
     <div id={0} style="width: 100% !important; margin-top: 50px; margin-bottom: 50px;"></div>'''.format(element_id)
 
 
 def format_javascript(csv, element_id):
-    # given a csv and an element id create javascript
+    """ Given a csv and an element id create javascript"""
     obj_name = element_id.translate(None, '/')
-    # return ''' {0}jObject = new Dygraph(document.getElementById('{1}'), "{2}", { {rollPeriod: 7, showRoller: true}});'''.format(obj_name, element_id,csv)
     return ''' %sObject = new Dygraph(document.getElementById('%s'), "%s",  {rollPeriod: 7, showRoller: true});
     ''' %(obj_name, element_id, csv)
 
 
 def create_graph(csv, value):
-    # given a csv return two items a div and the javascript part
+    """ Given a csv return two items a div and the javascript part """
     div_id = "{1}{0}".format(str(value), str(csv).replace('.csv', ''))
     html = create_div(div_id)
     javascript_part = format_javascript(csv, div_id)
     return html, javascript_part
 
 
+def is_str(val):
+    """replacement of isinstance"""
+    try:
+        return isinstance(val, basestring)
+    except NameError:
+        return isinstance(val, str)
+
+
 def create_graphs(csv_s):
-    # given a list of csvs create a list of tuples [(div),(javascript)]
-    if isinstance(csv_s, basestring):
+    """ Given a list of csvs create a list of tuples [(div),(javascript)] """
+    if is_str(csv_s):
         return create_graph(csv_s, 1)
 
     div_parts = javascript_parts = ''
@@ -67,8 +77,10 @@ def create_graphs(csv_s):
 
 
 def construct_page(csv_s, output_file_name):
+    """
     # give a csv(or list of csvs) and output filename
     # this will create a html file in the current working directory
+    """
     header_str = head()
     divs, scripts = create_graphs(csv_s)
     body_str = body(divs, scripts)
@@ -98,7 +110,7 @@ def get_parser():
 if __name__ == '__main__':
     args = get_parser().parse_args()
     paths = []
-    print(dir(args))
+    pp(dir(args))
     for file in os.listdir(args.usr_folder):
         #print(paths)
         if str(file).endswith('csv'):
