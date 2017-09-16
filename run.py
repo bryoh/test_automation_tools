@@ -1,13 +1,10 @@
 '''
 Given a list of csv files, plots each csv file on a web page
 you need to have dygraph libraries in a folder nameed dygraph
+After executing run the following and view the graphs in your browser
 
-dygraph-----|
-            |_______dygraph.css
-            |_______dygraph.min.js
-dygrap_data |
-            |_______file1.csv
-            |_______file2.csv
+python2 -m SimpleHTTPServer
+
 '''
 
 import os
@@ -110,9 +107,7 @@ def get_parser():
 if __name__ == '__main__':
     args = get_parser().parse_args()
     paths = []
-    pp(dir(args))
     for file in os.listdir(args.usr_folder):
-        #print(paths)
         if str(file).endswith('csv'):
             paths.append(file)
     construct_page(paths, 'index.html')
