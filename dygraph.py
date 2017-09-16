@@ -11,6 +11,7 @@ dygrap_data |
 '''
 
 import os
+from pprint import pprint as pp
 
 def head():
     return """
@@ -98,7 +99,7 @@ def get_parser():
 if __name__ == '__main__':
     args = get_parser().parse_args()
     paths = []
-    print(dir(args))
+    pp(dir(args))
     for file in os.listdir(args.usr_folder):
         #print(paths)
         if str(file).endswith('csv'):
