@@ -1,0 +1,3 @@
+[submodule "web/SeleniumBase"]
+	path = web/SeleniumBase
+	url = https://github.com/seleniumbase/SeleniumBase.git
