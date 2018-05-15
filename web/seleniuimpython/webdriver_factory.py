@@ -27,16 +27,15 @@ class MyBaseCase(BaseCase):
     user = os.environ.get('USER')
     password = os.environ.get('PASSWORD')
 
-
-def waitFor(condition, timeout=10):
-    ''' A quick wait for function.
-    Condition needs to be a callable object that return True, otherwise the
-    function will act like a snooze until
-    the
-    '''
-    now = datetime.now()
-    statement = True if condition() else False
-    while (not statement) and (datetime.now() - now).total_seconds() < timeout:
+    def waitFor(self, condition, timeout=10):
+        ''' A quick wait for function.
+        Condition needs to be a callable object that return True, otherwise the
+        function will act like a snooze until
+        the
+        '''
+        now = datetime.now()
         statement = True if condition() else False
+        while (not statement) and (datetime.now() - now).total_seconds() < timeout:
+            statement = True if condition() else False
 
-    return statement
+        return statement
