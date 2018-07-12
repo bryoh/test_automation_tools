@@ -42,7 +42,8 @@ def _findChildrenByProps_func(parent_obj, properties_names_values, max_child_cou
     children = object.children(parent_obj)
     # Look for matching children
     for c in children:
-        if _hasPropertiesAndValues(c, properties_names_values):
+        if properties_names_values in object.properties(c):
+        #if _hasPropertiesAndValues(c, properties_names_values):
             found_children.append(c)
             if len(found_children) == max_child_count:
                 return found_children
