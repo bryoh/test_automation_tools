@@ -34,8 +34,8 @@ class MyBaseCase(BaseCase):
         the
         '''
         now = datetime.now()
-        statement = True if condition() else False
+        statement = bool(condition())
         while (not statement) and (datetime.now() - now).total_seconds() < timeout:
-            statement = True if condition() else False
+            statement = bool(condition())
 
         return statement

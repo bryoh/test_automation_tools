@@ -17,7 +17,7 @@ class Webdatatest(unittest.TestCase):
     
     def test_webdata(self):
         driver = self.driver
-        driver.get(self.base_url + "/#!/login")
+        driver.get(f"{self.base_url}/#!/login")
         driver.find_element_by_css_selector("input.form-control").clear()
         driver.find_element_by_css_selector("input.form-control").send_keys("")
         driver.find_element_by_xpath("//input[@type='password']").clear()
